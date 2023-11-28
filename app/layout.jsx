@@ -1,5 +1,8 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Header from "@/app/(components)/header";
+import Footer from "@/app/(components)/footer";
+import cn from "@/app/(lib)/cn";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,8 +14,12 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
       <html lang="en">
-        <body className={inter.className}>
-          {children}
+        <body className={cn(inter.className)}>
+             <section className={cn("min-h-screen relative")}>
+              <Header/>
+                {children}
+              <Footer className={cn("absolute w-full bottom-0")}/>
+             </section>
         </body>
       </html>
   );
