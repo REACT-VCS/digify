@@ -4,7 +4,7 @@ const Header = ({className}) => {
     return (
         <>
             <header id="header" className={cn("header",className)}>
-                This Is Header Component
+                This Is Static Header Component
             </header>
         </>
     );

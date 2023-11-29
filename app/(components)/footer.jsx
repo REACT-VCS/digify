@@ -5,10 +5,10 @@ const Footer = ({className}) => {
         <>
            <div className={cn('newsletter_footer',className)}>
                <section id="newsletter" className={cn("newsletter")}>
-                   This is newsletter Section
+                   This is Static newsletter Section
                </section>
                <footer id="footer" className={cn("footer")}>
-                   This Is Footer Component
+                   This Is Stactic Footer Component
                </footer>
            </div>
         </>
