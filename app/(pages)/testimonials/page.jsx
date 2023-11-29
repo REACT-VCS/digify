@@ -1,11 +1,14 @@
 import BreadcrumbBanner from "@/app/(components)/breadcrumbBanner";
 import Testimonials from "@/app/(components)/testimonials";
+import FrontendLayout from "@/app/(layouts)/frontend";
 
 const Page = () => {
     return (
        <>
-           <BreadcrumbBanner/>
-           <Testimonials/>
+           <FrontendLayout>
+               <BreadcrumbBanner/>
+               <Testimonials/>
+           </FrontendLayout>
        </>
     );
 };

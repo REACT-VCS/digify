@@ -1,11 +1,14 @@
 import BreadcrumbBanner from "@/app/(components)/breadcrumbBanner";
 import Teams from "@/app/(components)/teams";
+import FrontendLayout from "@/app/(layouts)/frontend";
 
 const Page = () => {
     return (
        <>
-           <BreadcrumbBanner/>
-           <Teams/>
+            <FrontendLayout>
+                <BreadcrumbBanner/>
+                <Teams/>
+            </FrontendLayout>
        </>
     );
 };
