@@ -33,12 +33,12 @@ const Page = async () => {
   // );
   return (
     <>
-      <FrontendLayout headerCss={"bg-black text-white"}>
-        <Hero />
+      <FrontendLayout>
+        {/* <Hero />
         <Brands />
         <WorkLists />
         <Statistics />
-        <FeaturedProjects />
+        <FeaturedProjects /> */}
       </FrontendLayout>
     </>
   );

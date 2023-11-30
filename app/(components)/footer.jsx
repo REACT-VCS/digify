@@ -1,5 +1,6 @@
 import cn from "@/app/(lib)/cn";
 import Link from "next/link";
+import Logo from "./mini/logo";
 const Footer = ({ className }) => {
   return (
     <>
@@ -40,10 +41,8 @@ const Footer = ({ className }) => {
         >
           <div className="footer_top ccontainer mx-auto grid grid-cols-12 gap-y-5">
             <div className="col-span-12 md:col-span-4">
-              <h1 className="text-white text-[39.2px] not-italic font-bold leading-[normal] font-poppins">
-                LOGO HERE
-              </h1>
-              <p className="text-white text-xl not-italic font-normal leading-[normal] font-avenir py-4 lg:py-5 w-full lg:w-[318px]">
+              <Logo />
+              <p className="text-white text-xl not-italic font-normal leading-[normal] font-avenir pb-4 lg:pb-5 w-full lg:w-[318px]">
                 Some footer text about the Agency. Just a little description to
                 help people understand you better
               </p>
