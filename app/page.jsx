@@ -34,7 +34,7 @@ const Page = async () => {
   // );
   return (
     <>
-      <FrontendLayout headerCss={cn("bg-[#D7F5DC]")}>
+      <FrontendLayout headerCss={cn("greenGradientColor")}>
         {/* <Hero />
         <Brands />
         <WorkLists />

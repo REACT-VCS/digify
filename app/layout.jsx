@@ -1,7 +1,13 @@
-import { Poppins } from "next/font/google";
+import { Poppins, Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import cn from "@/app/(lib)/cn";
+
+const jakarta = Plus_Jakarta_Sans({
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+});
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -17,7 +23,9 @@ const avenir = localFont({
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body className={cn(poppins.variable, avenir.variable)}>{children}</body>
+      <body className={cn(poppins.variable, avenir.variable, jakarta.variable)}>
+        {children}
+      </body>
     </html>
   );
 };

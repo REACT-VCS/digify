@@ -5,3 +5,9 @@
 .ccontainer{
     @apply container mx-auto px-4;
 }
+.greenGradientColor{
+    background: linear-gradient(180deg, #D7F5DC 0%, #D7F5DC 100%);
+}
+.garyRgba{
+    background-color: rgba(248, 249, 252, 1);
+}

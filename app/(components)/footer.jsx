@@ -1,11 +1,8 @@
-"use client";
 import cn from "@/app/(lib)/cn";
 import Link from "next/link";
 import Logo from "./mini/logo";
-import { usePathname } from "next/navigation";
-const Footer = ({ className, menus }) => {
-  let currentPath = usePathname();
-  console.log("Footer", currentPath);
+
+const Footer = ({ className, menus, currentPath }) => {
   return (
     <>
       <div className={cn("newsletter_footer", className)}>

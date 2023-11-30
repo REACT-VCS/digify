@@ -1,14 +1,11 @@
-"use client";
 import cn from "@/app/(lib)/cn";
 import Link from "next/link";
 import Logo from "./mini/logo";
-import { usePathname } from "next/navigation";
-const Header = ({ className, menus }) => {
-  let currentPath = usePathname();
-  console.log("Header", currentPath);
+
+const Header = ({ className, menus, currentPath }) => {
   return (
     <>
-      <header id="header" className={cn("header", className)}>
+      <header id="header" className={cn("header garyRgba", className)}>
         {/* py-[33px] */}
         <div className="ccontainer flex justify-between items-center flex-col lg:flex-row py-[20px] gap-y-4">
           <Link href={"/"}>
