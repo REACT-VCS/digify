@@ -5,6 +5,7 @@ import Statistics from "@/app/(components)/statistics";
 import FeaturedProjects from "@/app/(components)/featuredProjects";
 import FrontendLayout from "@/app/(layouts)/frontend";
 import { GetData } from "./(lib)/fetch";
+import cn from "./(lib)/cn";
 const Page = async () => {
   // let BrandList = await GetData("BrandList");
   // let HeroList = await GetData("HeroList");
@@ -33,7 +34,7 @@ const Page = async () => {
   // );
   return (
     <>
-      <FrontendLayout>
+      <FrontendLayout headerCss={cn("bg-[#D7F5DC]")}>
         {/* <Hero />
         <Brands />
         <WorkLists />

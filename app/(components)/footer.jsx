@@ -1,7 +1,11 @@
+"use client";
 import cn from "@/app/(lib)/cn";
 import Link from "next/link";
 import Logo from "./mini/logo";
-const Footer = ({ className }) => {
+import { usePathname } from "next/navigation";
+const Footer = ({ className, menus }) => {
+  let currentPath = usePathname();
+  console.log("Footer", currentPath);
   return (
     <>
       <div className={cn("newsletter_footer", className)}>
@@ -82,13 +86,18 @@ const Footer = ({ className }) => {
                   Quick Links
                 </h2>
                 <ul className="space-y-4">
-                  {[...Array(4)].map((_, index) => (
+                  {menus?.map((item, index) => (
                     <li key={index}>
                       <Link
-                        href={"/"}
-                        className="text-white text-lg not-italic font-medium leading-[normal] font-avenir"
+                        href={item?.path}
+                        className={cn(
+                          "text-white text-lg not-italic font-medium leading-[normal] font-avenir",
+                          {
+                            "text-[#20b15a]": currentPath === item?.path,
+                          }
+                        )}
                       >
-                        Services
+                        {item?.name}
                       </Link>
                     </li>
                   ))}
