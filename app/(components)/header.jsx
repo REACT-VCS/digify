@@ -7,7 +7,7 @@ const Header = ({ className, menus, currentPath }) => {
     <>
       <header id="header" className={cn("header garyRgba", className)}>
         {/* py-[33px] */}
-        <div className="ccontainer flex justify-between items-center flex-col lg:flex-row py-[20px] gap-y-4">
+        <div className="ccontainer flex justify-between items-center flex-col lg:flex-row py-[20px] lg:py-[33px] gap-y-4">
           <Link href={"/"}>
             <Logo logoCSS={cn("text-[30px]")} />
           </Link>
