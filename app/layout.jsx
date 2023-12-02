@@ -2,6 +2,7 @@ import { Poppins, Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import cn from "@/app/(lib)/cn";
+import { GetData } from "./(lib)/fetch";
 
 const jakarta = Plus_Jakarta_Sans({
   weight: ["200", "300", "400", "500", "600", "700", "800"],
@@ -19,7 +20,17 @@ const avenir = localFont({
   src: "../public/fonts/avenir.otf",
   variable: "--font-avenir",
 });
-
+export const generateMetadata = async () => {
+  let metaData = await GetData("SiteMeta/home");
+  return {
+    title: `Digify - ${metaData[0].title} | Digital Agency`,
+    description: metaData[0].description,
+    keywords: metaData[0].keywords,
+    openGraph: {
+      images: metaData[0].image,
+    },
+  };
+};
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">

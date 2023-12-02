@@ -35,10 +35,9 @@ const Page = async () => {
     <>
       <FrontendLayout headerCss={cn("greenGradientColor")}>
         <HeroAndBrands />
-        {/* 
         <WorkLists />
         <Statistics />
-        <FeaturedProjects /> */}
+        <FeaturedProjects />
       </FrontendLayout>
     </>
   );

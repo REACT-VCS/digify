@@ -1,3 +1,4 @@
+import SectionHeading from "@/app/(components)/mini/sectionHeading";
 import Services from "@/app/(components)/services";
 import FrontendLayout from "@/app/(layouts)/frontend";
 
@@ -5,7 +6,13 @@ const Page = () => {
   return (
     <>
       <FrontendLayout>
-        <Services />
+        <section className="service_page ccontainer space-y-[65px] py-[65px]">
+          <SectionHeading
+            subHeading={`Our All Services`}
+            heading={`We Provide BestWeb design services`}
+          />
+          <Services />
+        </section>
       </FrontendLayout>
     </>
   );
