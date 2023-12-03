@@ -1,8 +1,10 @@
 import cn from "@/app/(lib)/cn";
 import Link from "next/link";
 import Logo from "./mini/logo";
+import { GetData } from "../(lib)/fetch";
 
-const Footer = ({ className, menus, currentPath }) => {
+const Footer = async ({ className, menus, currentPath }) => {
+  let SocialLink = await GetData("SocialLink");
   return (
     <>
       <div className={cn("newsletter_footer", className)}>

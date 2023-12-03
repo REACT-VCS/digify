@@ -1,8 +1,10 @@
 import SectionHeading from "@/app/(components)/mini/sectionHeading";
 import Services from "@/app/(components)/services";
 import FrontendLayout from "@/app/(layouts)/frontend";
+import { GetData } from "@/app/(lib)/fetch";
 
-const Page = () => {
+const Page = async () => {
+  let AllService = await GetData("AllService");
   return (
     <>
       <FrontendLayout>

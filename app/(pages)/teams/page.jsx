@@ -1,8 +1,11 @@
 import SectionHeading from "@/app/(components)/mini/sectionHeading";
 import Teams from "@/app/(components)/teams";
 import FrontendLayout from "@/app/(layouts)/frontend";
+import { GetData } from "@/app/(lib)/fetch";
 
-const Page = () => {
+const Page = async () => {
+  let TeamList = await GetData("TeamList");
+
   return (
     <>
       <FrontendLayout>

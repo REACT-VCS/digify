@@ -1,8 +1,9 @@
 import cn from "@/app/(lib)/cn";
 import SectionHeading from "@/app/(components)/mini/sectionHeading";
 import Image from "next/image";
+import Link from "next/link";
 let worklistIcons = ["activity", "heart", "work"];
-const WorkLists = ({ className }) => {
+const WorkLists = ({ className, data }) => {
   return (
     <>
       <section
@@ -16,26 +17,26 @@ const WorkLists = ({ className }) => {
         {/* Work Lists  */}
         <div className="workLists">
           <div className="grid grid-cols-12 gap-y-10">
-            {[...Array(3)].map((_, index) => (
-              <div
-                className="col-span-12 md:col-span-6 lg:col-span-4"
-                key={index}
-              >
+            {data?.work?.map((_, i) => (
+              <div className="col-span-12 md:col-span-6 lg:col-span-4" key={i}>
                 <div className="icon h-[93px] w-[93px] bg-[#d7f5dc] rounded-[20px] flex items-center justify-center">
                   <Image
-                    src={`/img/worklist/${worklistIcons[index]}.svg`}
+                    src={`/img/worklist/${worklistIcons[i]}.svg`}
                     width={33}
                     height={33}
                     alt="work_list_icon"
                   />
                 </div>
                 <h1 className="heading text-black text-2xl not-italic font-semibold leading-[normal] font-poppins py-[15px]">
-                  Grow Your Business
+                  {_?.title}
                 </h1>
                 <p className="content text-black text-lg not-italic font-normal leading-[normal] font-avenir">
-                  We help identify the best ways to improve your business
+                  {_?.des}
                 </p>
-                <div className="learn_more flex pt-[25px] lg:pt-[50px]">
+                <Link
+                  href={`/`}
+                  className="learn_more flex pt-[25px] lg:pt-[50px]"
+                >
                   <span className="text-black text-lg not-italic font-normal leading-[normal] font-avenir">
                     Learn More
                   </span>
@@ -46,7 +47,7 @@ const WorkLists = ({ className }) => {
                     alt="learnMore"
                     className="ml-[10px]"
                   />
-                </div>
+                </Link>
               </div>
             ))}
           </div>

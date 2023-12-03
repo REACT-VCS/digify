@@ -6,38 +6,25 @@ import { GetData } from "./(lib)/fetch";
 import cn from "./(lib)/cn";
 import HeroAndBrands from "@/app/(components)/heroAndBrands";
 const Page = async () => {
-  // let BrandList = await GetData("BrandList");
-  // let HeroList = await GetData("HeroList");
-  // let WorkList = await GetData("WorkList");
-  // let FeaturedProject = await GetData("FeaturedProject");
-  // let AllProject = await GetData("AllProject");
-  // let AllService = await GetData("AllService");
-  // let SiteMeta = await GetData("SiteMeta/home");
-  // let SocialLink = await GetData("SocialLink");
-  // let StatList = await GetData("StatList");
-  // let TeamList = await GetData("TeamList");
-  // let TestimonialList = await GetData("TestimonialList");
-
-  // console.log(
-  //   BrandList,
-  //   HeroList,
-  //   WorkList,
-  //   FeaturedProject,
-  //   AllProject,
-  //   AllService,
-  //   SiteMeta,
-  //   SocialLink,
-  //   StatList,
-  //   TeamList,
-  //   TestimonialList
-  // );
+  let HeroList = await GetData("HeroList");
+  let BrandList = await GetData("BrandList");
+  let WorkList = await GetData("WorkList");
+  let StatList = await GetData("StatList");
+  let FeaturedProject = await GetData("FeaturedProject");
+  let data = {
+    hero: HeroList,
+    brand: BrandList,
+    work: WorkList,
+    stat: StatList,
+    projects: FeaturedProject,
+  };
   return (
     <>
       <FrontendLayout headerCss={cn("greenGradientColor")}>
-        <HeroAndBrands />
-        <WorkLists />
-        <Statistics />
-        <FeaturedProjects />
+        <HeroAndBrands data={data} />
+        <WorkLists data={data} />
+        <Statistics data={data} />
+        <FeaturedProjects data={data} />
       </FrontendLayout>
     </>
   );

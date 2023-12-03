@@ -1,7 +1,9 @@
 import cn from "@/app/(lib)/cn";
 import Image from "next/image";
 
-const Statistics = ({ className }) => {
+const Statistics = ({ className, data }) => {
+  console.log(data?.stat);
+  const propertiesToMap = ["followers", "solved", "customers", "projects"];
   return (
     <>
       <section
@@ -9,7 +11,7 @@ const Statistics = ({ className }) => {
         className={cn("statistics py-[65px]", className)}
       >
         <div className="ccontainer grid grid-cols-12 md:gap-x-8 gap-y-8 md:gap-y-8">
-          {[...Array(4)].map((_, index) => (
+          {propertiesToMap?.map((_, index) => (
             <div
               className="col-span-12 md:col-span-6 xl:col-span-3 shadow-[4px_9px_20px_0px_rgba(0,0,0,0.07)] rounded-[20px] flex items-center flex-col py-[48px]"
               key={index}
