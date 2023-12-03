@@ -30,39 +30,41 @@ const HeroAndBrands = ({ data }) => {
               </Link>
             </div>
             <div className="col-span-12 lg:col-span-6">
-              <div className="grid grid-cols-3 gap-4">
-                <div className="col-span-2">
-                  <img
-                    width="{100}"
-                    height="{100}"
-                    src="/img/1.svg"
-                    className="w-full h-full"
-                  />
-                </div>
-                <div>
-                  <img
-                    width="{100}"
-                    height="{100}"
-                    src="/img/2.svg"
-                    className="w-full h-full"
-                  />
-                </div>
-                <div className="w-full">
-                  <img
-                    width="{100}"
-                    height="{100}"
-                    src="/img/3.svg"
-                    className="w-full h-full"
-                  />
-                </div>
-                <div className="col-span-2">
-                  <img
-                    width="{100}"
-                    height="{100}"
-                    src="/img/4.svg"
-                    className="w-full h-full"
-                  />
-                </div>
+              <div className="grid grid-cols-3 grid-rows-3 grid-flow-row gap-4 h-[500px]">
+                <div
+                  className={cn(
+                    `col-span-2 row-span-2 h-full w-full rounded-lg`
+                  )}
+                  style={{
+                    backgroundImage: `url(${data?.hero?.image2})`,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                ></div>
+                <div
+                  className="col-span-1 row-span-2 h-full w-full rounded-lg"
+                  style={{
+                    backgroundImage: `url(${data?.hero?.image1})`,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                ></div>
+                <div
+                  className="col-span-1 row-span-1 h-full w-full rounded-lg"
+                  style={{
+                    backgroundImage: `url(${data?.hero?.image3})`,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                ></div>
+                <div
+                  className="col-span-2 row-span-1 h-full w-full rounded-lg"
+                  style={{
+                    backgroundImage: `url(${data?.hero?.image4})`,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                ></div>
               </div>
             </div>
           </div>

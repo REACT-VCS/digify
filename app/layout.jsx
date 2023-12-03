@@ -1,6 +1,6 @@
+import "./globals.css";
 import { Poppins, Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
-import "./globals.css";
 import cn from "@/app/(lib)/cn";
 import { GetData } from "./(lib)/fetch";
 

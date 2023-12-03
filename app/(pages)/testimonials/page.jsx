@@ -14,7 +14,7 @@ const Page = async () => {
             subHeading={`Testimonial`}
             heading={`Better Agency/SEO Solution At Your Fingertips`}
           />
-          <Testimonials />
+          <Testimonials data={TestimonialList} />
         </section>
       </FrontendLayout>
     </>

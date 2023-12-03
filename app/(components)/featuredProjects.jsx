@@ -2,7 +2,7 @@ import cn from "@/app/(lib)/cn";
 import SectionHeading from "./mini/sectionHeading";
 import Image from "next/image";
 
-const FeaturedProjects = ({ className }) => {
+const FeaturedProjects = ({ className, data }) => {
   return (
     <>
       <section

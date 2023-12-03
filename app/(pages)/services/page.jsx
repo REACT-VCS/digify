@@ -13,7 +13,7 @@ const Page = async () => {
             subHeading={`Our All Services`}
             heading={`We Provide BestWeb design services`}
           />
-          <Services />
+          <Services data={AllService} />
         </section>
       </FrontendLayout>
     </>

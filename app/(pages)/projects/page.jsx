@@ -12,7 +12,7 @@ const Page = async () => {
             subHeading={`All Project`}
             heading={`Better Agency/SEO Solution At Your Fingertips`}
           />
-          <Projects />
+          <Projects data={AllProject} />
         </section>
       </FrontendLayout>
     </>

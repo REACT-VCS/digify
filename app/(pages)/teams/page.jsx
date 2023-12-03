@@ -5,7 +5,6 @@ import { GetData } from "@/app/(lib)/fetch";
 
 const Page = async () => {
   let TeamList = await GetData("TeamList");
-
   return (
     <>
       <FrontendLayout>
@@ -14,7 +13,7 @@ const Page = async () => {
             subHeading={`Our Team Member`}
             heading={`Check our awesome team members`}
           />
-          <Teams />
+          <Teams data={TeamList} />
         </section>
       </FrontendLayout>
     </>

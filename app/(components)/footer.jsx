@@ -1,10 +1,34 @@
+"use client";
 import cn from "@/app/(lib)/cn";
 import Link from "next/link";
 import Logo from "./mini/logo";
-import { GetData } from "../(lib)/fetch";
-
-const Footer = async ({ className, menus, currentPath }) => {
-  let SocialLink = await GetData("SocialLink");
+// import { GetData } from "../(lib)/fetch";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+let menus = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "Team",
+    path: "/teams",
+  },
+  {
+    name: "Service",
+    path: "/services",
+  },
+  {
+    name: "Projects",
+    path: "/projects",
+  },
+  {
+    name: "Testimonials",
+    path: "/testimonials",
+  },
+];
+const Footer = ({ className, social }) => {
+  let currentPath = usePathname();
   return (
     <>
       <div className={cn("newsletter_footer", className)}>
@@ -51,30 +75,25 @@ const Footer = async ({ className, menus, currentPath }) => {
               </p>
               <div className="social_icons">
                 <ul className="flex gap-x-3 lg:gap-x-4">
-                  {[...Array(4)].map((_, index) => (
-                    <li key={index}>
-                      <Link href={"fa.com"}>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="41"
-                          height="41"
-                          viewBox="0 0 41 41"
-                          fill="none"
-                        >
-                          <circle
-                            cx="20.4092"
-                            cy="20.4092"
-                            r="20.4092"
-                            fill="#20B15A"
+                  {social?.map((item, index) => {
+                    // let currentIcon = icons.find(
+                    //   (thisicon) => thisicon.name === item?.name
+                    // )?.icon;
+                    return (
+                      <li key={index}>
+                        <Link href={item?.link}>
+                          <Image
+                            src={`img/footer_social/${item?.name}.svg`}
+                            width={0}
+                            height={0}
+                            alt="socila_image"
+                            sizes="100vw"
+                            className="w-full h-full"
                           />
-                          <path
-                            d="M21.4915 29.1857V21.0995H24.2195L24.625 17.9335H21.4915V15.9169C21.4915 15.0033 21.7461 14.3778 23.0573 14.3778H24.7187V11.5552C23.9103 11.4685 23.0978 11.4267 22.2848 11.4299C19.8735 11.4299 18.218 12.9019 18.218 15.6042V17.9276H15.5078V21.0936H18.2239V29.1857H21.4915Z"
-                            fill="#F9F9F9"
-                          />
-                        </svg>
-                      </Link>
-                    </li>
-                  ))}
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
@@ -105,7 +124,6 @@ const Footer = async ({ className, menus, currentPath }) => {
             </div>
             <div className="col-span-12 md:col-span-4 flex justify-start md:justify-center">
               <div>
-                {" "}
                 <h2 className="text-white text-xl not-italic font-semibold leading-[normal] font-poppins pb-2 lg:pb-6">
                   Address
                 </h2>

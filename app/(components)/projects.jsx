@@ -1,19 +1,21 @@
 import cn from "@/app/(lib)/cn";
 import Image from "next/image";
+import Link from "next/link";
 
-const Projects = ({ className }) => {
+const Projects = ({ className, data }) => {
   return (
     <>
-      <section id="projects" className={cn("projects", className)}>
-        <div className="grid grid-cols-12 gap-8">
-          {[...Array(6)].map((_, index) => (
-            <div
-              className="col-span-6 shadow-[0px_4px_30px_0px_rgba(0,0,0,0.09)] rounded-[20px] bg-white p-[30px] space-y-7"
+      <div id="projects" className={cn("projects", className)}>
+        <div className="grid grid-cols-12 gap-y-8 md:gap-8">
+          {data?.map((item, index) => (
+            <Link
+              href={item?.live}
+              className="col-span-12 md:col-span-6 shadow-[0px_4px_30px_0px_rgba(0,0,0,0.09)] rounded-[20px] bg-white p-[30px] space-y-7"
               key={index}
             >
               <div className="image">
                 <Image
-                  src={`img/projects/image.svg`}
+                  src={item?.image}
                   height={100}
                   width={100}
                   alt="Single Project"
@@ -21,12 +23,12 @@ const Projects = ({ className }) => {
                 />
               </div>
               <h1 className="text-black text-[26px] not-italic font-semibold leading-[normal] uppercase font-poppins">
-                Build & Launch without problems
+                {item?.title}
               </h1>
-            </div>
+            </Link>
           ))}
         </div>
-      </section>
+      </div>
     </>
   );
 };

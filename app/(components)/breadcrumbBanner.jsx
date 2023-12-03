@@ -1,13 +1,42 @@
+"use client";
 import cn from "@/app/(lib)/cn";
-
-const BreadcrumbBanner = ({ className, page }) => {
+import { usePathname } from "next/navigation";
+let menus = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "Team",
+    path: "/teams",
+  },
+  {
+    name: "Service",
+    path: "/services",
+  },
+  {
+    name: "Projects",
+    path: "/projects",
+  },
+  {
+    name: "Testimonials",
+    path: "/testimonials",
+  },
+];
+const BreadcrumbBanner = ({ className }) => {
+  let currentPath = usePathname();
+  let currentPageName = menus?.find((menu) => menu?.path === currentPath)?.name;
+  let page = currentPath === "/contact" ? "Contact" : currentPageName;
   return (
     <>
       <section
         id="breadcrumb_banner"
         className={cn(
           "breadcrumb_banner font-jakarta pt-[100px] pb-[80px] garyRgba",
-          className
+          className,
+          {
+            none: currentPath === "/",
+          }
         )}
       >
         <div className="ccontainer space-y-5">

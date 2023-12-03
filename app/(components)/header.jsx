@@ -1,8 +1,32 @@
+"use client";
 import cn from "@/app/(lib)/cn";
 import Link from "next/link";
 import Logo from "./mini/logo";
-
-const Header = ({ className, menus, currentPath }) => {
+import { usePathname } from "next/navigation";
+let menus = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "Team",
+    path: "/teams",
+  },
+  {
+    name: "Service",
+    path: "/services",
+  },
+  {
+    name: "Projects",
+    path: "/projects",
+  },
+  {
+    name: "Testimonials",
+    path: "/testimonials",
+  },
+];
+const Header = ({ className }) => {
+  let currentPath = usePathname();
   return (
     <>
       <header id="header" className={cn("header garyRgba", className)}>
