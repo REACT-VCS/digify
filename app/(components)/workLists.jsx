@@ -16,7 +16,7 @@ const WorkLists = ({ className, data }) => {
         />
         {/* Work Lists  */}
         <div className="workLists">
-          <div className="grid grid-cols-12 gap-8">
+          <div className="grid grid-cols-12 gap-y-8 md:gap-8">
             {data?.work?.map((_, i) => (
               <div className="col-span-12 md:col-span-6 lg:col-span-4" key={i}>
                 <div className="icon h-[93px] w-[93px] bg-[#d7f5dc] rounded-[20px] flex items-center justify-center">
