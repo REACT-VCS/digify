@@ -32,11 +32,10 @@ const BreadcrumbBanner = ({ className }) => {
       <section
         id="breadcrumb_banner"
         className={cn(
-          "breadcrumb_banner font-jakarta pt-[100px] pb-[80px] garyRgba",
-          className,
-          {
-            none: currentPath === "/",
-          }
+          `breadcrumb_banner font-jakarta pt-[100px] pb-[80px] garyRgba ${
+            currentPath === "/" ? "none" : "block"
+          }`,
+          className
         )}
       >
         <div className="ccontainer space-y-5">
