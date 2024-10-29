@@ -1,3 +1,5 @@
+## UPDATE: 29 OCT, 2024 , API removed by author
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
